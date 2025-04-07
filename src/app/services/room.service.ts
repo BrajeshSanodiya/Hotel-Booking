@@ -9,11 +9,12 @@ export class RoomService {
   apiEndPoint= "https://freeapi.miniprojectideas.com/api/HotelBooking"
 
   constructor(private http:HttpClient) { 
+
   }
 
   login(obj:any){
     console.log(obj);
     
-    return this.http.post(this.apiEndPoint+'/Login',obj, {});
+    return this.http.post(this.apiEndPoint+'/Login',obj);
   }
 }

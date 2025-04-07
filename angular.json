@@ -65,6 +65,10 @@
               "buildTarget": "hotel_booking:build:development"
             }
           },
+          "options": {
+            "buildTarget": "hotel-booking:build",
+            "proxyConfig": "src/proxy.conf.json"
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
