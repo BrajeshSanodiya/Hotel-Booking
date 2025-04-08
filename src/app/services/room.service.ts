@@ -13,8 +13,18 @@ export class RoomService {
   }
 
   login(obj:any){
-    console.log(obj);
-    
     return this.http.post(this.apiEndPoint+'/Login',obj);
+  }
+
+  getAllRoom(){
+    return this.http.get(this.apiEndPoint+'/GetAllRooms')
+  }
+
+  saveUpdateRoom(obj:any){
+    return this.http.post(this.apiEndPoint+'/AddUpdateBulkRooms',obj)
+  }
+
+  deleteRoom(id:any){
+    return this.http.delete(this.apiEndPoint+'/DeleteRoomByRoomId?roomId='+id)
   }
 }
