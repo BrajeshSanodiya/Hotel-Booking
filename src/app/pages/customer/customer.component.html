@@ -1,0 +1,36 @@
+<div class="row pt-2">
+    <div class="col-12 my-2 text-end">
+      <button class="btn btn-primary" (click)="addNewCustomer()">Add New</button>
+      <button class="btn btn-success mx-2" (click)="saveCustomerData()" >Bulk Update</button>
+    </div>
+  </div>
+  <div class="row p-3">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Sr No</th>
+            <th>Name</th>
+            <th>Mobile No</th>
+            <th>Email</th>
+            <th>Aadhar No</th>
+            <th>City</th>
+            <th>Address</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of customerData; let sr = index">
+            <td>{{ sr + 1 }}</td>
+            <td><input type="text" [(ngModel)]="customer.name"/></td>
+            <td><input type="text" [(ngModel)]="customer.mobileNo"/></td>
+            <td><input type="text" [(ngModel)]="customer.email"/></td>
+            <td><input type="text" [(ngModel)]="customer.aadharNo"/></td>
+            <td><input type="text" [(ngModel)]="customer.city"/></td>
+            <td><input type="text" [(ngModel)]="customer.address"/></td>
+            <td><button class="btn btn-sm btn-danger" type="button" (click)="customerDelete(customer.custId)" >Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

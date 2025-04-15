@@ -1,1 +1,77 @@
-<p>users works!</p>
+<!-- <div class="row">
+    <div class="col-12 my-2 text-end">
+      <button class="btn btn-primary" (click)="addNewUser()">Add New</button>
+      <button class="btn btn-success mx-2" (click)="saveUserData()" >Bulk Update</button>
+    </div>
+  </div> -->
+  <div class="row p-3">
+    <div class="col-8">
+      <div class="card">
+        <div class="card-header bg-success">User List</div>
+        <div class="card-body">
+        
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Sr No</th>
+            <th>UserName</th>
+            <th>Password</th>
+            <th>Role</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of userData; let sr = index">
+            <td>{{ sr + 1 }}</td>
+            <td><input type="text" [(ngModel)]="user.userName"/></td>
+            <td><input type="text" [(ngModel)]="user.password"/></td>
+            <td><input type="text" [(ngModel)]="user.role"/></td>
+            <td>
+              <button class="btn btn-sm btn-success mx-2" type="button" (click)="editDelete(user)" >Edit</button>
+              <button class="btn btn-sm btn-danger mx-2" type="button" (click)="userDelete(user.userId)" >Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+        </div>
+        </div>
+    </div>
+    <div class="col-4">
+      <div class="card">
+        <div class="card-header bg-success">User Form</div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-6">
+              <label for="">User Name</label>
+              <input type="text" class="form-control" [(ngModel)]="userObj.userName" >
+            </div>
+  
+            <div class="col-6">
+              <label for="">Select Role</label>
+              <select class="form-control" [(ngModel)]="userObj.role" >
+                <option value="Staff">staff</option>
+                <option value="Admin">admin</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <label for="">Password</label>
+              <input type="type" class="form-control" [(ngModel)]="userObj.password" >
+            </div>
+          </div> 
+          
+
+          <div class="row pt-3">
+            <div class="col-12 text-center">
+              <button (click)="saveUserData()" class="btn btn-success">Save User</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  

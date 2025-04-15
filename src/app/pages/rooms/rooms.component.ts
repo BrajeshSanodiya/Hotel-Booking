@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-rooms',
-  imports: [NgFor,NgIf, FormsModule],
+  imports: [NgFor,FormsModule],
   templateUrl: './rooms.component.html',
   styleUrl: './rooms.component.css'
 })
@@ -44,7 +44,7 @@ export class RoomsComponent{
   saveRoomData(){
     this.roomService.saveUpdateRoom(this.roomData).subscribe((res:any)=>{
       if(res.result){
-        alert('Data Updated Successfully')
+        alert('Room Updated Successfully')
       }else{
         alert(res.message)
       }
@@ -55,7 +55,7 @@ export class RoomsComponent{
     this.roomService.deleteRoom(id).subscribe((res:any)=>{
       if(res.result){
         this.getAllRooms()
-        alert('Data Deleted Successfully')
+        alert('Room Deleted Successfully')
       }else{
         alert(res.message)
       }

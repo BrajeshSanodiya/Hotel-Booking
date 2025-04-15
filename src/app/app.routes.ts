@@ -7,6 +7,8 @@ import { NewBookingComponent } from './pages/new-booking/new-booking.component';
 import { BookingListComponent } from './pages/booking-list/booking-list.component';
 import { BookingCalendarComponent } from './pages/booking-calendar/booking-calendar.component';
 import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
+import { CustomerComponent } from './pages/customer/customer.component';
+import { UsersComponent } from './pages/users/users.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -20,6 +22,8 @@ export const routes: Routes = [
       { path: 'new-booking', component: NewBookingComponent },
       { path: 'bookings', component: BookingListComponent },
       { path: 'booking-calendar', component: BookingCalendarComponent },
+      { path: 'customers', component: CustomerComponent },
+      { path: 'users', component: UsersComponent },
     ],
   },
   { path: '**', component: PagenotfoundComponent },
